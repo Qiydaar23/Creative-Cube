@@ -1,0 +1,16 @@
+/* feed.css */
+
+/* Make the postImageWrapper a flex container */
+.postImageWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Set a fixed width for each image */
+.imageupload {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}

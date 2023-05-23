@@ -8,7 +8,11 @@ import firebase from "firebase/app"
 import "firebase/auth"
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {useCollectionData} from 'react-firebase-hooks/firestore'
-
+import Header from './components/Header/Header';
+import Feed from './pages/Feed';
+import { Route, Routes } from 'react-router-dom';
+import RoomPage from './pages/RoomPage';
+//import './App.css'
 //firebase.initializeApp(FirebaseApp)
 
 
@@ -32,10 +36,19 @@ export default function App() {
   
   
   return (
-    <div>
+    <div className='theme-light'>
       
       {/* <Navbar /> */}
       <Login setUser = {setUser}/>
+      {/* <h1>{user}</h1> */}
+      <div>
+        <Routes>
+          <Route path = '/feed' element = {<Feed />} />
+          <Route path = '/room/:roomId' element = {<RoomPage/>} />
+        </Routes>
+      </div>
     </div>
+    
+
   )
 }

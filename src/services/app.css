@@ -1,0 +1,40 @@
+/* $theme:(
+    light:(
+        background-color: black;
+        color:black
+    ),
+    dark:(
+        background-color: white;
+        color:white
+    )
+)
+@mixin theme($theme-name){
+    @each $key,$value in map-get($theme,$theme-name){
+        #{$key}:$value;
+    }
+}
+@content;
+$theme:(
+    light:(
+        background-color: black;
+        color:black */
+    /* ),
+    dark:(
+        background-color: white;
+        color:white
+    )
+) */
+
+
+.theme-light{
+    .login{
+        background-color: black;
+         color:black
+    }
+}
+.theme-dark{
+    .login{
+        background-color: white;
+         color:white
+    }
+}

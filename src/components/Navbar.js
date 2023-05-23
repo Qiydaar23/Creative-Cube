@@ -19,6 +19,7 @@ export default function Navbar() {
             <li><Link to = '/timeline'>Timeline</Link></li>
             <li><Link to = '/header'>Header</Link></li>
             <li><Link to = '/chatroom'>ChatRoom</Link></li>
+            <li><Link to = '/roompage'>RoomPage</Link></li>
         </ul>
 
     </div>

@@ -10,6 +10,7 @@ import Feed from './pages/Feed';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Timeline from './components/TimeLine/Timeline';
+import RoomPage from './pages/RoomPage';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: 'Timeline',
     element: <Timeline />
+  },
+  {
+    path: 'RoomPage',
+    element: <RoomPage />
   },
 ]) 
 

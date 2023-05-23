@@ -11,6 +11,7 @@ import './feed.css'
 import {storage} from '../firebase.js'
 import {ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
 import { v4 } from 'uuid'
+import Header from '../components/Header/Header';
 
 
 export default function Feed() {
@@ -52,9 +53,16 @@ export default function Feed() {
     const [comment, setComment] = useState("")
     const [commentList, setCommentList] = useState([])
 
-    const handleCommentSubmit = (e) => {
-        e.preventDefault()
-        setCommentList((commentList) => [...commentList, comment])
+    const handleCommentSubmit = (url) => {
+        let copy = [...imageList]
+        copy = copy.map((image)=>{
+            if(image.url === url){
+                image.comments.push(comment)
+            }
+            return image
+
+        })
+        setImageList(copy)
         setComment("")
     }
 
@@ -69,9 +77,20 @@ export default function Feed() {
 
     const [islike, setIslike] = useState(false)
 
-    const handleLike =()=>{
-        setlike(islike ? like-1: like+1)
-        setIslike(!islike)
+    const handleLike =(url)=>{
+        let copy = [...imageList]
+        copy = copy.map((image)=>{
+            if(image.url === url){
+                const like = image.islike ? -1 : 1
+                image.count = image.count + like
+                // image.count = image.count + 1
+                image.islike = !image.islike
+            }
+            return image    
+        })
+        setImageList(copy)
+        
+        console.log(imageList)
     }
     const [imageUpload, setImageUpload] = useState(null);
     const [imageList, setImageList] = useState([]); // list of images
@@ -89,7 +108,8 @@ export default function Feed() {
        listAll(imageListRef).then((res)=>{
         res.items.forEach((item)=>{
             getDownloadURL(item).then((url)=>{
-                setImageList((prev) => [...prev, url]);
+                console.log(url);
+                setImageList((prev) => [...prev, {url, count:0, islike: false, comments: []}]);
             })   
         }) 
        })
@@ -97,7 +117,8 @@ export default function Feed() {
   
     
         return (
-        
+        <div>  
+        <Header/>
           <div className="post">
             {commentList.map((comment) => {
                 return <p>{comment}</p>;
@@ -123,26 +144,45 @@ export default function Feed() {
                 <div className="postBottomLeft">
                   <button onClick={handleLike}>❤️</button>
                   <br />
-                  <button onClick={handleCommentSubmit}>
+                  {/* <button onClick={handleCommentSubmit}>
                     💭 comment
                     <input value={comment} type="text" placeholder="....post a comment" onChange={handleComment} />
-                  </button>
+                  </button> */}
                   <div>
                     <input type='file'onChange={(event) => {setImageUpload(event.target.files[0])}}/>
-                    <button onClick={uploadImage}>Upload Post</button>
+                    {/* <button onClick={uploadImage}>Upload Post</button>
+                    <button className='delete'>Delete Post</button> */}
                     {imageList.map((url) => {
-                        return <img src={url} className='imageupload'/>
+                        return (
+                        <div>
+                            <img src={url.url} className='imageupload'/>
+                            <button onClick={uploadImage}>Upload Post</button>
+                    <button className='delete'>Delete Post</button>
+                    <button onClick={() => handleLike(url.url) }>❤️
+                    </button>
+                    <span className="postLikeCounter">{url.count} people like this</span>{url.comments.map((comment) => {
+                        return <p>{comment}</p>;
+                    })
+                    }
+                
+                    <button onClick={() =>handleCommentSubmit(url.url)}>
+                    💭 comment </button>
+                    <input value={comment} type="text" placeholder="....post a comment" onChange={handleComment} />
+                 
+                        </div>
+                        )
                     }
                     )}
                   </div>
                 </div>
-                <span className="postLikeCounter">{like} people like this</span>
+                
                 <div className="postBottomRight">
                   <span className="postCommentText"> comments</span>
                 </div>
               </div>
             </div>
           </div>
+          </div>  
         );
       
       

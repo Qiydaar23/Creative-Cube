@@ -19,6 +19,8 @@ function Login({ setUser }) {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        console.log(setUser)
+        //setUser(user);
         navigate("/feed");
         console.log("signinuser" + user);
         // ...

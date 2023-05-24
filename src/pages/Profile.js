@@ -16,6 +16,7 @@ export default function Profile() {
   }
   return (
     <div className='profile-page'>
+      
       <form onSubmit={handleRoomCodeChange} className='profile-form'>
         <div>
           <label htmlFor='name'>Enter Room code</label>

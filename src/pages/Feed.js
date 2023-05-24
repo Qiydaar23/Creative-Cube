@@ -131,7 +131,7 @@ export default function Feed() {
   
     
         return (
-        <div>  
+        <div className='container'>  
         <Header/>
         <Sidebar/>
           <div className="post">
@@ -139,34 +139,7 @@ export default function Feed() {
                 return <p>{comment}</p>;
             })
             }
-            <div className="postWrapper">
-              <div className="postTop">
-                <div className="postTopLeft"></div>
-                <img className="postProfileImg" src="" alt="" />
-                <span className="postUsername"></span>
-                <br />
-                <span className="postDate"></span>
-                <div className="postTopRight"></div>
-              </div>
-              <div className="postCenter">
-                <span className="postText"></span>
-                <img className="postImg" src="" alt="" />
-              </div>
-              <div className="postImageWrapper">
-                <img className="postImage" src="" alt="" />
-              </div>
-              <div className="postBottom">
-                <div className="postBottomLeft">
-                  {/* <button onClick={handleLike}>❤️</button> */}
-                  <br />
-                  {/* <button onClick={handleCommentSubmit}>
-                    💭 comment
-                    <input value={comment} type="text" placeholder="....post a comment" onChange={handleComment} />
-                  </button> */}
-                  <div>
-                    {/* <input type='file'onChange={(event) => {setImageUpload(event.target.files[0])}}/> */}
-                    {/* <button onClick={uploadImage}>Upload Post</button>
-                    <button className='delete'>Delete Post</button> */}
+                  <div className='image-house'>  
                     {imageList.map((url) => {
                         return (
                         <div>
@@ -184,7 +157,7 @@ export default function Feed() {
                     }
                 
                     <button onClick={() =>handleCommentSubmit(url.url)}>
-                    💭 comment </button>
+                    💬 comment </button>
                     <input value={comment} type="text" placeholder="....post a comment" onChange={handleComment} />
                  
                         </div>
@@ -193,14 +166,9 @@ export default function Feed() {
                     )}
                   </div>
                 </div>
-                
-                <div className="postBottomRight">
-                  
-                </div>
               </div>
-            </div>
-          </div>
-          </div>  
+       
+   
         );
       
       

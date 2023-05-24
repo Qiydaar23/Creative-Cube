@@ -60,4 +60,10 @@
   border: solid 1px #111;
   box-shadow: #111 5px 5px 5px;
 }
+.image-house{
+  flex: 1;
+  max-width: 800px;
+  overflow-y: scroll;
+  align-items: flex-start;
+}
 

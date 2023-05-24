@@ -24,6 +24,9 @@ export default function Gallery() {
       height = {540}
       controls
     />  
-    </div>  
+    <button>❤️</button>
+    <button>💬</button>
+    </div>
+      
   )
 }

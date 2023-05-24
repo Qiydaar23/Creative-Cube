@@ -12,6 +12,8 @@ import {storage} from '../firebase.js'
 import {ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
 import { v4 } from 'uuid'
 import Header from '../components/Header/Header';
+import Sidebar from '../components/Sidebar/Sidebar';
+
 
 
 export default function Feed() {
@@ -71,7 +73,19 @@ export default function Feed() {
         setComment(e.target.value)
     }
 
+    const upLoadPost = () => {
 
+        //const upLoadPost = () => {
+
+            // addDoc(posts, {
+            //     imageUrl: "",
+            //     createdAt: serverTimestamp(),
+            //     user: "Qasir",
+            //     Likes: 0,
+            //   })..........................................working on this file
+
+        
+    }
 
     const [like, setlike] = useState(0)
 
@@ -119,6 +133,7 @@ export default function Feed() {
         return (
         <div>  
         <Header/>
+        <Sidebar/>
           <div className="post">
             {commentList.map((comment) => {
                 return <p>{comment}</p>;
@@ -142,22 +157,25 @@ export default function Feed() {
               </div>
               <div className="postBottom">
                 <div className="postBottomLeft">
-                  <button onClick={handleLike}>❤️</button>
+                  {/* <button onClick={handleLike}>❤️</button> */}
                   <br />
                   {/* <button onClick={handleCommentSubmit}>
                     💭 comment
                     <input value={comment} type="text" placeholder="....post a comment" onChange={handleComment} />
                   </button> */}
                   <div>
-                    <input type='file'onChange={(event) => {setImageUpload(event.target.files[0])}}/>
+                    {/* <input type='file'onChange={(event) => {setImageUpload(event.target.files[0])}}/> */}
                     {/* <button onClick={uploadImage}>Upload Post</button>
                     <button className='delete'>Delete Post</button> */}
                     {imageList.map((url) => {
                         return (
                         <div>
+                            <input type='file'onChange={(event) => {setImageUpload(event.target.files[0])}}/>
                             <img src={url.url} className='imageupload'/>
                             <button onClick={uploadImage}>Upload Post</button>
+
                     <button className='delete'>Delete Post</button>
+
                     <button onClick={() => handleLike(url.url) }>❤️
                     </button>
                     <span className="postLikeCounter">{url.count} people like this</span>{url.comments.map((comment) => {
@@ -177,7 +195,7 @@ export default function Feed() {
                 </div>
                 
                 <div className="postBottomRight">
-                  <span className="postCommentText"> comments</span>
+                  
                 </div>
               </div>
             </div>

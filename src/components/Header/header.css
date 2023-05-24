@@ -43,3 +43,11 @@
   .header-button:hover {
     background-color: #555;
   }
+  .header-cover {
+    background-color: red;
+    padding: 20px;
+  }
+  .header-subtitle-container {
+    color: white;
+    font-size: 14px;
+  }

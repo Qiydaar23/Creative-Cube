@@ -37,7 +37,7 @@ export default function Header() {
         <Link to ='/roompage'>
         <VideoChatOutlinedIcon className='header-button'/>
         </Link>
-        <Link to='/feed'><button className='header-button'>FEED</button></Link>
+        {/* <Link to='/feed'><button className='header-button'>FEED</button></Link> */}
 
     </header>
   )

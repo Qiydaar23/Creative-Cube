@@ -20,6 +20,10 @@ export default function Navbar() {
             <li><Link to = '/header'>Header</Link></li>
             <li><Link to = '/chatroom'>ChatRoom</Link></li>
             <li><Link to = '/roompage'>RoomPage</Link></li>
+            <li><Link to = '/gallery'>gallery</Link></li>
+            <li><Link to = '/chat'>chat</Link></li>
+            <li><Link to = '/lesson'>Lesson</Link></li>
+            
         </ul>
 
     </div>

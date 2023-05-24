@@ -12,6 +12,9 @@ import Header from './components/Header/Header';
 import Feed from './pages/Feed';
 import { Route, Routes } from 'react-router-dom';
 import RoomPage from './pages/RoomPage';
+import Chatroom from './components/ChatRoom/Chatroom';
+import Chat from './components/Chat';
+
 //import './App.css'
 //firebase.initializeApp(FirebaseApp)
 

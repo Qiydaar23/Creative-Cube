@@ -11,6 +11,12 @@ import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Timeline from './components/TimeLine/Timeline';
 import RoomPage from './pages/RoomPage';
+import Gallery from './pages/Gallery';
+import Chatroom from './components/ChatRoom/Chatroom';
+import Chat from './components/Chat';
+import Lesson from './components/Lesson';
+
+
 
 const router = createBrowserRouter([
   {
@@ -49,6 +55,23 @@ const router = createBrowserRouter([
     path: 'RoomPage',
     element: <RoomPage />
   },
+  {
+    path: 'Gallery',
+    element: <Gallery />
+  },
+  {
+    path: 'ChatRoom',
+    element: <Chatroom />
+  },
+  {
+    path: 'Chat',
+    element: <Chat />
+  },
+  {
+    path: 'Lesson',
+    element: <Lesson />
+  },
+ 
 ]) 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

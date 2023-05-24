@@ -14,3 +14,50 @@
   object-fit: cover;
   margin-bottom: 10px;
 }
+.postWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.postImageWrapper {
+  margin-top: 10px;
+}
+
+.postImage {
+  width: 200px; /* Adjust the width as needed */
+  height: auto;
+}
+
+.postBottomLeft {
+  display: flex;
+  align-items: center;
+}
+
+.postBottomLeft button {
+  margin-right: 10px;
+}
+
+.postLikeCounter {
+  margin-top: 10px;
+}
+
+.postBottomLeft input[type="text"] {
+  margin-top: 10px;
+  padding: 5px;
+  width: 200px; /* Adjust the width as needed */
+}
+
+.postBottomLeft button.delete {
+  margin-top: 10px;
+}
+
+.imageupload {
+  width: 200px; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 10px;
+  border: solid 1px #111;
+  box-shadow: #111 5px 5px 5px;
+}
+

@@ -10,6 +10,9 @@ export default function RoomPage() {
 
     const myMeeting = async (element) => {
 
+
+        
+
         const appID = 955745303
         const serverSecret ="91e8a7697deafbd33aeafdcdc57bb73a";
         const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
@@ -31,8 +34,16 @@ export default function RoomPage() {
 
   return (
     <div className='room-Page'>
-        <h1>Room page</h1>
+        <h1>Hello Creatives </h1>
+        <span>please while on video be respectful to peers
+            this is a safe space for all creatives
+        </span>
+        <p>
+            please be mindful of your background!
+        </p>
+        
         <div ref = {myMeeting}/>
+            
     </div>
   )
 }

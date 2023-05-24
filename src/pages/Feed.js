@@ -36,15 +36,7 @@ export default function Feed() {
             
         } )
     }
-    // console.log(getStorage(FirebaseApp, "gs://creative-cube-2b9da.appspot.com"))
-    // let storage = getStorage(FirebaseApp, "gs://creative-cube-2b9da.appspot.com")  
-    // console.log(storage)
-    // let database = getDatabase(FirebaseApp)
-    // console.log(database.app)
-    // set(ref(database, 'users/1'), {
-    //     name: 'Ada Lovelace',
-    //     description: "testing picture upload",
-    // });
+    
     uploadPost().catch((error) => {
         console.log(error)
     });
@@ -110,6 +102,12 @@ export default function Feed() {
     const [imageList, setImageList] = useState([]); // list of images
     const imageListRef = ref(storage, 'images/');
 
+    const handleDelete = (url) => {
+        let copy = [...imageList]
+        copy = copy.filter((image) => image.url !== url)
+        setImageList(copy)
+    }
+
     const uploadImage = () => {
         if (imageUpload == null) return;
         const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
@@ -133,7 +131,10 @@ export default function Feed() {
         return (
         <div className='container'>  
         <Header/>
+        <div className='gridcontainer'>
+        <div>   
         <Sidebar/>
+        </div>
           <div className="post">
             {commentList.map((comment) => {
                 return <p>{comment}</p>;
@@ -147,7 +148,7 @@ export default function Feed() {
                             <img src={url.url} className='imageupload'/>
                             <button onClick={uploadImage}>Upload Post</button>
 
-                    <button className='delete'>Delete Post</button>
+                    <button onClick={() => handleDelete(url.url) } className='delete'>Delete Post</button>
 
                     <button onClick={() => handleLike(url.url) }>❤️
                     </button>
@@ -166,6 +167,10 @@ export default function Feed() {
                     )}
                   </div>
                 </div>
+
+
+        </div>
+        
               </div>
        
    

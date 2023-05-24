@@ -14,6 +14,8 @@ import { Route, Routes } from 'react-router-dom';
 import RoomPage from './pages/RoomPage';
 import Chatroom from './components/ChatRoom/Chatroom';
 import Chat from './components/Chat';
+import AshGallery from './pages/AshGallery';
+
 
 //import './App.css'
 //firebase.initializeApp(FirebaseApp)
@@ -41,9 +43,9 @@ export default function App() {
   return (
     <div className='theme-light'>
       
-      {/* <Navbar /> */}
+     
       <Login setUser = {setUser}/>
-      {/* <h1>{user}</h1> */}
+      
       <div>
         <Routes>
           <Route path = '/feed' element = {<Feed />} />

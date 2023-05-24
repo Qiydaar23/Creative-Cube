@@ -1,5 +1,5 @@
 import React from 'react'
-import './sidebar.css'
+//import './sidebar.css'
 import CastForEducationIcon from '@mui/icons-material/CastForEducation';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ForumIcon from '@mui/icons-material/Forum'
@@ -9,7 +9,7 @@ import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { Link } from 'react-router-dom'
 
 
-export default function Sidebar() {
+export default function AshleySidebar() {
 
   const [expended, setExpended] = useState(false)
 
@@ -18,7 +18,7 @@ export default function Sidebar() {
       <div className='sidebar-upper'>
         <div className='sidebar-heading'>
           <div className='sidebar-brand'></div>
-            <img className='sidebar-heading-icon' src='https://mail.google.com/mail/u/0?ui=2&ik=5c79c2748c&attid=0.1&permmsgid=msg-a:r-7329919252278184271&th=18854f72a62a1db2&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ_TaViINfeRo2xAzn2tvQqx-rmu5LwzDo6jxeg3RxU8XG-lSKTLQFNk4wCdVqxGDdSCL3es18Zzz6qwxK6jAL_pn8NsL8MwVTRQGKo7-_B8X--JLVX3Pv-fkgI&disp=emb&realattid=18854f7076ee4e019f71' alt='cube' />
+            <img className='sidebar-heading-icon' src='https://mail.google.com/mail/u/0?ui=2&ik=5c79c2748c&attid=0.1&permmsgid=msg-a:r-3625961861562444952&th=18859223a2af3878&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ943M9awp16Me7PQIqqDkRO-9HTqqVxG2XiqqoM_59uO2GG6iwC3bwFC_Qz_6Iajxa0myM_ldCV5gQ-pAIjmtS2o_fu2aC8GTXTHqwaQxORIxvSFsLlJu96rvI&disp=emb&realattid=18859222dffe4e019f71' alt='cube' />
             <h2>...............The Creative............</h2>
         </div>
         
@@ -62,7 +62,7 @@ export default function Sidebar() {
 
           <span className='sidebar-button-text'><AccountBoxIcon /><Link className='link-text' to= '/profile'>profile</Link></span>
           <span className='sidebar-button-text'><ForumIcon /><Link className='link-text' to = '/chat'>chat</Link></span>
-          <span className='sidebar-button-text'><AppsIcon /><Link className='link-text' to = '/gallery'>Gallery</Link></span>
+          <span className='sidebar-button-text'><AppsIcon /><li><Link to = '/ashgallery'>AshGallery</Link></li></span>
       </div>
     </div>
   )

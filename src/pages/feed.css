@@ -66,4 +66,8 @@
   overflow-y: scroll;
   align-items: flex-start;
 }
+.gridcontainer{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 
+}

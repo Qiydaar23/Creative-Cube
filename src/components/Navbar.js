@@ -23,6 +23,8 @@ export default function Navbar() {
             <li><Link to = '/gallery'>gallery</Link></li>
             <li><Link to = '/chat'>chat</Link></li>
             <li><Link to = '/lesson'>Lesson</Link></li>
+            <li><Link to = '/ashgallery'>AshGallery</Link></li>
+            <li><Link to = '/ashleysidebar'>AshleySidebar</Link></li>
             
         </ul>
 

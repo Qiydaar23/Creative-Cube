@@ -15,6 +15,9 @@ import Gallery from './pages/Gallery';
 import Chatroom from './components/ChatRoom/Chatroom';
 import Chat from './components/Chat';
 import Lesson from './components/Lesson';
+import AshGallery from './pages/AshGallery';  
+import AshleySidebar from './components/AshleySidebar';
+
 
 
 
@@ -71,19 +74,25 @@ const router = createBrowserRouter([
     path: 'Lesson',
     element: <Lesson />
   },
+  {
+    path: 'AshGallery',
+    element: <AshGallery />
+  },
+  // {
+  //   path: 'AshleySidebar',
+  //   element: <AshleySidebar />
+  // },
  
 ]) 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <firebaseContext.Provider value={{ firebase, FieldValue }}>\\
+ 
  
   <RouterProvider router={router}/>  
   
   
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 

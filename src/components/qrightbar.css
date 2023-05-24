@@ -1,0 +1,126 @@
+.qrightbar-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .qrightbar-heading img,
+  .qrightbar-heading button {
+    margin: 10px 0;
+  }
+  
+  .qrightbar-heading img {
+    width: 200px;
+  }
+  
+  .qrightbar-heading button {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+  }
+  
+  .qrightbar-heading button:hover {
+    background-color: #aaa;
+  }
+  
+  .qrightbar-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .qrightbar-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .qrightbar-button:hover {
+    background-color: #aaa;
+  }
+  
+  .qbar-button .MuiSvgIcon-root {
+    font-size: 30px;
+    color: #fff;
+  }
+  .qsidebar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 75vh;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: red;
+    padding: 20px;
+  }
+  
+  .qsidebar-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .qrightbar-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .qidebar-heading-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  
+  .qrightbar-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 900px;
+  }
+  
+  .qrightbar-button-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .link-text {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  .qsidebar-container-NX{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 75vh;
+    width: 300px;
+    position: fixed;
+    top: 100px;
+    right: 9px;
+    bottom: 10px;
+    background-color: red;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+
+  

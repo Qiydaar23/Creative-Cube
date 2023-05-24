@@ -15,6 +15,10 @@ import RoomPage from './pages/RoomPage';
 import Chatroom from './components/ChatRoom/Chatroom';
 import Chat from './components/Chat';
 import AshGallery from './pages/AshGallery';
+import Ashfeed from './components/Ashfeed';
+import Rightbar from './components/Rightbar';
+import AshLesson from './components/AshLesson';
+
 
 
 //import './App.css'

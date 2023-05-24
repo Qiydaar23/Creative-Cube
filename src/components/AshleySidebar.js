@@ -18,7 +18,7 @@ export default function AshleySidebar() {
       <div className='sidebar-upper'>
         <div className='sidebar-heading'>
           <div className='sidebar-brand'></div>
-            <img className='sidebar-heading-icon' src='https://mail.google.com/mail/u/0?ui=2&ik=5c79c2748c&attid=0.1&permmsgid=msg-a:r-3625961861562444952&th=18859223a2af3878&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ943M9awp16Me7PQIqqDkRO-9HTqqVxG2XiqqoM_59uO2GG6iwC3bwFC_Qz_6Iajxa0myM_ldCV5gQ-pAIjmtS2o_fu2aC8GTXTHqwaQxORIxvSFsLlJu96rvI&disp=emb&realattid=18859222dffe4e019f71' alt='cube' />
+            <img className='sidebar-heading-icon' src='https://res.cloudinary.com/dgr7iw6kd/image/upload/v1685285430/ej4a0nkemj0vayc54yss.jpg' alt='cube' />
             <h2>...............The Creative............</h2>
         </div>
         
@@ -58,10 +58,11 @@ export default function AshleySidebar() {
         
           
         
-          <span className='sidebar-button-text'><CastForEducationIcon /><li><Link className='link-text' to = '/lesson'>Lesson</Link></li></span>
+          <span className='sidebar-button-text'><CastForEducationIcon /><Link className='link-text' to = '/ashlesson'>lesson</Link></span>
 
-          <span className='sidebar-button-text'><AccountBoxIcon /><Link className='link-text' to= '/profile'>profile</Link></span>
+          <span className='sidebar-button-text'><AccountBoxIcon /><Link className='link-text' to = '/ashprofile'>profile</Link></span>
           <span className='sidebar-button-text'><ForumIcon /><Link className='link-text' to = '/chat'>chat</Link></span>
+          
           <span className='sidebar-button-text'><AppsIcon /><li><Link to = '/ashgallery'>AshGallery</Link></li></span>
       </div>
     </div>

@@ -25,6 +25,9 @@ export default function Navbar() {
             <li><Link to = '/lesson'>Lesson</Link></li>
             <li><Link to = '/ashgallery'>AshGallery</Link></li>
             <li><Link to = '/ashleysidebar'>AshleySidebar</Link></li>
+            <li><Link to = '/Qrightbar'>Qrightbar</Link></li>
+            <li><Link to = '/Ashfeed'>Ashfeed</Link></li>' 
+            <li><Link to = '/AshLesson'>AshLesson</Link></li>''                                  
             
         </ul>
 

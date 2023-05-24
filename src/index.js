@@ -17,6 +17,12 @@ import Chat from './components/Chat';
 import Lesson from './components/Lesson';
 import AshGallery from './pages/AshGallery';  
 import AshleySidebar from './components/AshleySidebar';
+import Rightbar from './components/Rightbar';
+import Qrightbar from './components/Qrightbar';
+import Ashfeed from './components/Ashfeed';
+import Ashlesson from './components/AshLesson';
+
+
 
 
 
@@ -77,6 +83,24 @@ const router = createBrowserRouter([
   {
     path: 'AshGallery',
     element: <AshGallery />
+  },
+  {
+    path: 'Rightbar',
+    element: <Rightbar />
+  },
+  {
+    path: 'Qrightbar',
+    element: <Qrightbar />
+  },
+  {
+    path: 'Ashfeed',
+    element: <Ashfeed />
+    
+  },
+  {
+    path: 'AshLesson',
+    element: <Ashlesson />
+    
   },
   // {
   //   path: 'AshleySidebar',

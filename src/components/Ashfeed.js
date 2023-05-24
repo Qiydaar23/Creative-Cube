@@ -6,18 +6,20 @@ import firebaseContext from '../context/firebase';
 //import {getDatabase, ref, set} from 'firebase/database';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore'; // where collections are stored
 import { useEffect, useState } from 'react'
-import './feed.css'
+
 //import { useState } from 'react';
 import {storage} from '../firebase.js'
 import {ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
 import { v4 } from 'uuid'
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
-import Rightbar from '../components/Rightbar';
+import Qrightbar from '../components/Qrightbar';
+import AshleySidebar from './AshleySidebar';
 
 
 
-export default function Feed() {
+
+export default function Ashfeed() {
     useEffect( () => {
 
         let firestore = getFirestore(FirebaseApp)
@@ -134,7 +136,7 @@ export default function Feed() {
         <Header/>
         <div className='gridcontainer'>
              <div>   
-                 <Sidebar/>
+                 <AshleySidebar />
              </div>
           <div className="post">
             {commentList.map((comment) => {
@@ -172,7 +174,7 @@ export default function Feed() {
                     )}
                    
                   </div>
-                    <Rightbar/>
+                    <Qrightbar/>
                 </div>
 
 

@@ -1,0 +1,126 @@
+.ashrightbar-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ashrightbar-heading img,
+  .ashrightbar-heading button {
+    margin: 10px 0;
+  }
+  
+  .ashrightbar-heading img {
+    width: 200px;
+  }
+  
+  .ashrightbar-heading button {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+  }
+  
+  .ashrightbar-heading button:hover {
+    background-color: #aaa;
+  }
+  
+  .ashrightbar-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ashrightbar-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .ashrightbar-button:hover {
+    background-color: #aaa;
+  }
+  
+  .ashbar-button .MuiSvgIcon-root {
+    font-size: 30px;
+    color: #fff;
+  }
+  .ashsidebar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 75vh;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: red;
+    padding: 20px;
+  }
+  
+  .ashsidebar-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .ashrightbar-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .ashidebar-heading-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  
+  .ashrightbar-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 900px;
+  }
+  
+  .ashrightbar-button-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .link-text {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  .ashsidebar-container-NX{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 75vh;
+    width: 300px;
+    position: fixed;
+    top: 100px;
+    right: 9px;
+    bottom: 10px;
+    background-color: red;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+
+  

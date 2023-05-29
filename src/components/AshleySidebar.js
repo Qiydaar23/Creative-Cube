@@ -62,8 +62,7 @@ export default function AshleySidebar() {
 
           <span className='sidebar-button-text'><AccountBoxIcon /><Link className='link-text' to = '/ashprofile'>profile</Link></span>
           <span className='sidebar-button-text'><ForumIcon /><Link className='link-text' to = '/chat'>chat</Link></span>
-          
-          <span className='sidebar-button-text'><AppsIcon /><li><Link to = '/ashgallery'>AshGallery</Link></li></span>
+          <span className='sidebar-button-text'><AppsIcon /><Link to = '/ashgallery'>Gallery</Link></span>
       </div>
     </div>
   )

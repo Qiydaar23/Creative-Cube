@@ -4,7 +4,7 @@ import  FirebaseApp  from '../firebase.js';
 import {getStorage} from 'firebase/storage';// where pictures are stored
 import firebaseContext from '../context/firebase';
 //import {getDatabase, ref, set} from 'firebase/database';
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore'; // where collections are stored
+import { getFirestore, collection, addDoc, getDocs, updateDoc , arrayUnion, doc, setDoc } from 'firebase/firestore'; // where collections are stored
 import { useEffect, useState } from 'react'
 import './feed.css'
 //import { useState } from 'react';
@@ -18,10 +18,40 @@ import Rightbar from '../components/Rightbar';
 
 
 export default function Feed() {
+
+    const [posts , setPosts] = useState([])
+
+
+
+    let firestore = getFirestore(FirebaseApp)
+    
+    const fetchposts = async () => {
+        const querySnapshot = await getDocs(collection(firestore, "post"));
+
+        let postsFromdb = []
+
+        querySnapshot.forEach((doc) => {
+            console.log(`${doc.id} => ${doc.data()}`);
+
+            postsFromdb.push({id: doc.id, ...doc.data()})
+
+        } )
+        postsFromdb = await Promise.all(postsFromdb.map(async (post) => {
+            const url = await getDownloadURL(ref(storage, post.storagelocation))
+            post.comments = post.comments ? post.comments : []
+            return {...post, url}
+        }))
+
+        setPosts(postsFromdb)
+        console.log(postsFromdb)
+    }
+
+
+
+
     useEffect( () => {
 
-        let firestore = getFirestore(FirebaseApp)
-    
+        
         const uploadPost = async () => {
             
             let doc = await addDoc(collection(firestore, "post"), {
@@ -30,17 +60,14 @@ export default function Feed() {
                  pictureName: ""
         }) 
     } 
-    const fetchposts = async () => {
-        const querySnapshot = await getDocs(collection(firestore, "post"));
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
-            
-        } )
-    }
+
+
+
     
-    uploadPost().catch((error) => {
-        console.log(error)
-    });
+    
+    // uploadPost().catch((error) => {
+    //     console.log(error)
+    // });
     fetchposts().catch((error) => {
         console.log(error)
     });
@@ -48,16 +75,30 @@ export default function Feed() {
     const [comment, setComment] = useState("")
     const [commentList, setCommentList] = useState([])
 
-    const handleCommentSubmit = (url) => {
-        let copy = [...imageList]
-        copy = copy.map((image)=>{
-            if(image.url === url){
-                image.comments.push(comment)
-            }
-            return image
+    const handleCommentSubmit = (post) => {
+     
 
-        })
-        setImageList(copy)
+        console.log(post)
+        console.log(comment)
+        const docRef = doc(firestore, "post", post.id);
+        updateDoc(docRef, {
+            comments: arrayUnion(comment)
+
+        }).then(() => {
+            console.log("Document successfully updated!");
+              let copy = [...posts]
+         copy = copy.map((image)=>{
+             if(image.id === post.id){
+                 image.comments.push(comment)
+             }
+             return image
+
+         })
+         setPosts(copy)
+        }).catch((error) => {
+            console.error("Error updating document: ", error);
+        });
+
         setComment("")
     }
 
@@ -112,8 +153,27 @@ export default function Feed() {
     const uploadImage = () => {
         if (imageUpload == null) return;
         const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-        uploadBytes(imageRef, imageUpload).then(() => {
-            alert("Image uploaded");
+        uploadBytes(imageRef, imageUpload).then((data) => {
+            console.log(data);
+
+            const imagelocation = "gs://" + data.ref.bucket + "/" + data.ref.fullPath;
+            console.log(imagelocation);
+            setDoc(doc(firestore, "post", v4() ), {
+                storagelocation: imagelocation,
+    
+            }).then(() => {
+                console.log("Document successfully created!");
+                fetchposts().catch((error) => {
+                    console.log(error)
+                });
+            
+            }).catch((error) => {
+                console.error("Error creating document: ", error);
+            });
+
+
+
+            // alert("Image uploaded");
         })    
     }
 
@@ -137,12 +197,27 @@ export default function Feed() {
                  <Sidebar/>
              </div>
           <div className="post">
-            {commentList.map((comment) => {
-                return <p>{comment}</p>;
-            })
-            }
+          <input type='file'onChange={(event) => {setImageUpload(event.target.files[0])}}/>
+                            
+                            <button onClick={uploadImage}>Upload Post</button>
+            
                   <div className='image-house'>  
-                    {imageList.map((url) => {
+
+                  {posts.map((post) => {
+                    return(
+                        <div>
+                            <img src={post.url} className='imageupload'/>
+                            <button onClick={() =>handleCommentSubmit(post)}>
+                    💬 comment </button>
+                    <input value={comment} type="text" placeholder="....post a comment" onChange={handleComment} />
+                    {post.comments.map((comment) => {
+                return <p>{comment}</p>;
+            })}
+                        </div>
+                    )
+                  })
+                  }
+                    {/* {imageList.map((url) => {
                         return (
                         <div>
                             <input type='file'onChange={(event) => {setImageUpload(event.target.files[0])}}/>
@@ -169,7 +244,8 @@ export default function Feed() {
                         </div>
                         )
                     }
-                    )}
+                    )} */}
+                    
                    
                   </div>
                     <Rightbar/>

@@ -4,7 +4,7 @@ import  FirebaseApp  from '../firebase.js';
 import {getStorage} from 'firebase/storage';// where pictures are stored
 import firebaseContext from '../context/firebase';
 //import {getDatabase, ref, set} from 'firebase/database';
-import { getFirestore, collection, addDoc, getDocs, updateDoc , arrayUnion, doc, setDoc } from 'firebase/firestore'; // where collections are stored
+import { getFirestore, collection, addDoc, getDocs, updateDoc , arrayUnion, doc, setDoc, deleteDoc } from 'firebase/firestore'; // where collections are stored
 import { useEffect, useState } from 'react'
 import './feed.css'
 //import { useState } from 'react';
@@ -37,7 +37,12 @@ export default function Feed() {
 
         } )
         postsFromdb = await Promise.all(postsFromdb.map(async (post) => {
-            const url = await getDownloadURL(ref(storage, post.storagelocation))
+            console.log("fetching image from " + post.storagelocation)
+            let url = "https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png"
+                if (post.storagelocation != undefined) {
+                 url = await getDownloadURL(ref(storage, post.storagelocation)) 
+                }
+            
             post.comments = post.comments ? post.comments : []
             return {...post, url}
         }))
@@ -144,10 +149,18 @@ export default function Feed() {
     const [imageList, setImageList] = useState([]); // list of images
     const imageListRef = ref(storage, 'images/');
 
-    const handleDelete = (url) => {
-        let copy = [...imageList]
-        copy = copy.filter((image) => image.url !== url)
-        setImageList(copy)
+    const handleDelete = async (post) => {
+
+        console.log("post in delete", post)
+        await deleteDoc(doc(firestore,"post", post.id)).then((data)=>{
+            console.log("succesfully deleted", data)
+        }).catch ((error) => {
+            console.log("error deleting", error)
+            let copy = [...post]
+         copy = copy.filter((image) => image.id !== post.id)
+         setPosts(copy)
+        })
+         
     }
 
     const uploadImage = () => {
@@ -180,9 +193,9 @@ export default function Feed() {
     useEffect(() => {
        listAll(imageListRef).then((res)=>{
         res.items.forEach((item)=>{
-            getDownloadURL(item).then((url)=>{
-                console.log(url);
-                setImageList((prev) => [...prev, {url, count:0, islike: false, comments: []}]);
+            getDownloadURL(item).then((post)=>{
+                console.log("the post is ",post);
+                setImageList((prev) => [...prev, {post, count:0, islike: false, comments: []}]);
             })   
         }) 
        })
@@ -207,7 +220,8 @@ export default function Feed() {
                     return(
                         <div>
                             <img src={post.url} className='imageupload'/>
-                            <button onClick={() =>handleCommentSubmit(post)}>
+                            <button onClick={() => handleDelete(post) } className='delete'>Delete Post</button>
+                            <button onClick={() =>handleCommentSubmit(post)}>    
                     💬 comment </button>
                     <input value={comment} type="text" placeholder="....post a comment" onChange={handleComment} />
                     {post.comments.map((comment) => {

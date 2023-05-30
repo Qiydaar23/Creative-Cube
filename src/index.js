@@ -102,6 +102,17 @@ const router = createBrowserRouter([
     element: <Ashlesson />
     
   },
+  {
+    path: 'room',
+    element: <RoomPage />,
+    children: [
+      {
+        path: ':roomId',
+        element: <RoomPage />
+      }
+    ]
+    
+  },
   // {
   //   path: 'AshleySidebar',
   //   element: <AshleySidebar />

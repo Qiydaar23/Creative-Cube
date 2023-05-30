@@ -6,7 +6,11 @@ import { useParams } from 'react-router-dom'
 
 export default function RoomPage() {
 
-    const {roomId} = useParams()
+    let {roomId} = useParams()
+
+    if (!roomId) {
+        roomId = "public"
+    }   
 
     const myMeeting = async (element) => {
 
@@ -34,7 +38,7 @@ export default function RoomPage() {
 
   return (
     <div className='room-Page'>
-        <h1>Hello Creatives </h1>
+        <h1>Hello Creatives welcome to room {roomId}</h1>
         <span>please while on video be respectful to peers
             this is a safe space for all creatives
         </span>

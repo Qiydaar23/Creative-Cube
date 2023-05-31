@@ -1,0 +1,108 @@
+/* feed.css */
+
+/* Make the postImageWrapper a flex container */
+.postImageWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Set a fixed width for each image */
+.imageupload {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.postWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.postImageWrapper {
+  margin-top: 10px;
+}
+
+.postImage {
+  width: 200px; /* Adjust the width as needed */
+  height: auto;
+}
+
+.postBottomLeft {
+  display: flex;
+  align-items: center;
+}
+
+.postBottomLeft button {
+  margin-right: 10px;
+}
+
+.postLikeCounter {
+  margin-top: 10px;
+}
+
+.postBottomLeft input[type="text"] {
+  margin-top: 10px;
+  padding: 5px;
+  width: 200px; /* Adjust the width as needed */
+}
+
+.postBottomLeft button.delete {
+  margin-top: 10px;
+}
+
+.imageupload {
+  width: 200px; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 10px;
+  border: solid 1px #111;
+  box-shadow: #111 5px 5px 5px;
+}
+.image-house{
+  flex: 1;
+  width: 600px;
+  overflow-y: scroll;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+.post{
+  width: 600px;
+}
+
+.gridcontainer{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+
+}
+.comment-container{
+ border: 2px solid black;
+ width: 60%;
+ background-color: aliceblue;
+}
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.comment-container p {
+  background-color: #e2e2e2;
+  color: #000;
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 16px;
+  max-width: 80%;
+}
+
+.comment-container p:nth-child(odd) {
+  background-color: #b0ebeb;
+}
+
+.comment-container p:nth-child(even) {
+  background-color: #fad2d2;
+}

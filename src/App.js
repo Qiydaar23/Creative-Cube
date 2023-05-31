@@ -18,6 +18,9 @@ import AshGallery from './pages/AshGallery';
 import Ashfeed from './components/Ashfeed';
 import Rightbar from './components/Rightbar';
 import AshLesson from './components/AshLesson';
+import Signup from './pages/Signup';
+import './app.css'
+
 
 
 
@@ -46,7 +49,6 @@ export default function App() {
   
   return (
     <div className='theme-light'>
-      
      
       <Login setUser = {setUser}/>
       

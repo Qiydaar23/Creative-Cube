@@ -20,8 +20,9 @@ export default function Qrightbar() {
 
   const follow = () => {
 
+    const user = JSON.parse(localStorage.getItem('user'))
     setDoc(doc(firestore, "followers", v4() ), {
-      source: "Qasir",
+      source: user.email,
       target: "Ashley",
       timestamp: new Date(),
 

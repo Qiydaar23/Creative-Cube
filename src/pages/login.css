@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  
 }
 
 .log {
@@ -69,17 +70,8 @@ min-height: 600px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  color: #fff;
+  color: black;
   }   
-  h1{
-  
-  }
-  p{
-
-  }
-  span{
-
-  }
-  button{
-
-  }
+.title{
+  align-items: center;
+}

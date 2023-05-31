@@ -4,9 +4,9 @@ import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy,
 import { auth, db } from '../firebase';
 import './chat.css';
 import Header from './Header/Header';
+import Chat from './Chat';
 
-
-export default function Chat(props) {
+export default function Ashchat(props) {
   const { room } = props;
 
   const [newMessage, setNewMessage] = useState('');
@@ -17,7 +17,6 @@ export default function Chat(props) {
   if (!currentRoom) {
       currentRoom = 'public';
   }
-  const user =JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
     
@@ -51,7 +50,7 @@ export default function Chat(props) {
      addDoc(messagesRef, {
       text: newMessage,
       createdAt: serverTimestamp(),
-      user: user.email,
+      user: "Ashley",
       room: currentRoom,
     }).then((docRef) => {
         console.log('Document written with ID: ', docRef.id);
@@ -62,7 +61,10 @@ export default function Chat(props) {
 
   return (
     <>
-    <Header />
+    <div>
+        <Header />
+    </div>    
+    
     <div onSubmit={handleSubmit} className='chat-app'>
         <div className='header'>
             <h1> Welcome to:{currentRoom}</h1>
@@ -87,6 +89,10 @@ export default function Chat(props) {
         </button>
       </form>
     </div>
+    <div>
+        <Chat />
+    </div>
     </>
+    
   );
 }

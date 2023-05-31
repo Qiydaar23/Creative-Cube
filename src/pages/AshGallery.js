@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import './gallery.css'
 import CloseIcon from '@mui/icons-material/Close';
+import Header from '../components/Header/Header';
 
 
 export default function AshGallery() {
@@ -70,6 +71,7 @@ export default function AshGallery() {
   }
   return (
    <>
+   <Header />
     <div className={model ? "model open" : "model"}>
       <img src={tempImgSrc} alt="pic" />
       <CloseIcon onClick={() => setModel(false)} />

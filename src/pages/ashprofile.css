@@ -1,0 +1,59 @@
+.ashprofile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .ashprofile-container {
+    width: 250px;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .ashpic-icon {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    margin-bottom: 10px;
+    
+  }
+  
+  .ashprofile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .ashprofile-form label {
+    margin-bottom: 5px;
+  }
+  
+  .ashprofile-form input {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .ashprofile-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .ashprofile-form button:hover {
+    background-color: #0056b3;
+  }

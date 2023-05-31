@@ -19,7 +19,8 @@ function Login({ setUser }) {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(setUser)
+        console.log(user)
+        localStorage.setItem("user",JSON.stringify(user))
         //setUser(user);
         navigate("/feed");
         console.log("signinuser" + user);
@@ -41,23 +42,15 @@ function Login({ setUser }) {
     <div className="login">
         <div className="card">
             <div className="left">
-                <h1 className="title">Hello Creatives 😏</h1>
-                <p>
+                <h1 className="title">Hello Creatives </h1>
+                <p className="word-colors">
                     Creative Cube is a social media platform for creative people to share their work and connect with other creatives.
                     Here is where you can share your work and get feedback from other creatives. This platfom is for all creatives, whether you are a photographer, videographer, graphic designer, or a painter.
                     We are all creatives here and we are all here to help each other grow.
                 </p>
                 <span>Dont you have an account?</span>
                 <Link to={"/signup"}>Signup</Link>
-            </div>
-        </div>
-        <div className="right">
-    </div>
-    </div>
-
-
-
-    <div className="theaterLogin">
+                <div className="theaterLogin">
       <h1 className="title">Creative Cube</h1>
       <h3 className="log">Login</h3>
       <form className="formcss" onSubmit={handleSubmit}>
@@ -88,6 +81,14 @@ function Login({ setUser }) {
       </form>
       <Link to={"/signup"}>Signup</Link>
     </div>
+            </div>
+        </div>
+        <div className="right">
+    </div>
+    </div>
+
+
+
     </>
   );
 }

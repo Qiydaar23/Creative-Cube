@@ -4,6 +4,7 @@ import './header.css'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import VideoChatOutlinedIcon from '@mui/icons-material/VideoChatOutlined';
+import FeedIcon from '@mui/icons-material/Feed';
 // import { useState } from 'react';
 
 export default function Header() {
@@ -29,15 +30,19 @@ export default function Header() {
 </svg> */}
                 {/* <DarkModeOutlinedIcon className='header-button'/> */}
         <Link to='/profile'><button className='header-button'>PROFILE</button></Link>
-        <div className='search'>
+        {/* <div className='search'>
         <SearchOutlinedIcon/>
         <input className='header-button' placeholder='Search'/>
-        </div>
+        </div> */}
         <DarkModeOutlinedIcon className='header-button'/>
         <Link to ='/roompage'>
         <VideoChatOutlinedIcon className='header-button'/>
         </Link>
-        {/* <Link to='/feed'><button className='header-button'>FEED</button></Link> */}
+      
+        <Link to='/Feed'>
+        <FeedIcon className='header-button'/>
+          </Link>
+
 
     </header>
   )

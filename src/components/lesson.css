@@ -3,4 +3,15 @@
     width: 200px; /* Adjust the width to your desired size */
     height: 200px; /* Adjust the height to your desired size */
   }
-  
+  .phant,
+.phantVideo {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: 5px solid black;
+}
+.insectVideo {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); /* Add a box shadow */
+  border: 4px solid red; /* Add a thick red border */
+  border-radius: 8px; /* Add a border radius */
+  margin-bottom: 20px; /* Add some margin at the bottom */
+}

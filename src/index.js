@@ -21,6 +21,9 @@ import Rightbar from './components/Rightbar';
 import Qrightbar from './components/Qrightbar';
 import Ashfeed from './components/Ashfeed';
 import Ashlesson from './components/AshLesson';
+import AshProfile from './pages/AshProfile';
+import Ashchat from './components/AshChat';
+
 
 
 
@@ -102,6 +105,16 @@ const router = createBrowserRouter([
     element: <Ashlesson />
     
   },
+   {
+    path: 'Ashprofile',
+    element: <AshProfile />
+    
+   },
+   {
+    path: 'Ashchat',
+    element: <Ashchat />
+    
+   },
   {
     path: 'room',
     element: <RoomPage />,

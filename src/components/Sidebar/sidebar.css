@@ -1,7 +1,7 @@
 .sidebar-container{
     background-color: black;
     width: 300px;
-    height: 100vh;
+    
     position: relative;
     color: white;
 
@@ -112,7 +112,7 @@
     transform: translate(0px, -8px) rotate(30deg);
 }
 .sidebar-container-NX{
-    width: 85px;
+    width: 167px;
 }
 .sidebar-heading-icon{
     display: flex;

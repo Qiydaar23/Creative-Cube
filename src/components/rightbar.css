@@ -112,9 +112,9 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
-    height: 75vh;
+    min-height: 100vh;
     width: 300px;
-    position: fixed;
+    position: absolute;
     top: 100px;
     right: 9px;
     bottom: 10px;

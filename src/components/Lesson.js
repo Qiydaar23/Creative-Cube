@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useRef, } from 'react'
 import './lesson.css'
+import Header from './Header/Header';
 
 export default function Gallery() {
 
@@ -21,8 +22,11 @@ export default function Gallery() {
   
 
   return (
-   <div> 
     <>
+    <Header />
+   <div> 
+  
+
     <h1 className='title'>Lesson Level : Expert</h1>
     <h1 className='subtitle'>Lesson Title : How to make an Elphant painting</h1>
     <div>
@@ -40,7 +44,7 @@ export default function Gallery() {
       <h2>And finishing touches and Gloss painting </h2>
     </div>
 
-    </>
+    
     <video className='phantVideo'
       ref = {videoRef}
       src = "https://res.cloudinary.com/dgr7iw6kd/video/upload/v1684967769/sbvocipdaz8aqpuokshs.mp4"
@@ -50,6 +54,7 @@ export default function Gallery() {
     />  
    
     </div>
+    </>
       
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt"
 import { useParams } from 'react-router-dom'
+import Header from '../components/Header/Header'
 
 
 
@@ -37,17 +38,38 @@ export default function RoomPage() {
     }
 
   return (
+    <>
+    <Header/>
     <div className='room-Page'>
         <h1>Hello Creatives welcome to room {roomId}</h1>
-        <span>please while on video be respectful to peers
-            this is a safe space for all creatives
-        </span>
-        <p>
-            please be mindful of your background!
-        </p>
+
         
         <div ref = {myMeeting}/>
+        <span>please wait for the video to load</span>
+
+        <div>
+        <img src="https://images.ctfassets.net/pdf29us7flmy/1ru4LpUGoG1KPeSJAkV1ZX/7900732794d4ded2db1e18738884695b/illustration-video-call-meeting-interview.png?w=720&q=100&fm=jpg" alt=""/>
+
+<ul>RULES
+    <li>
+    please be mindful of your background!
+</li>
+<li> please while on video be respectful to peers
+    this is a safe space for all creatives</li>
+    <li>
+        other wise have fun and enjoy the meeting
+    </li>
+    
+
+    
+</ul>
+
+        </div>
+
+
             
     </div>
+    </>
+    
   )
 }

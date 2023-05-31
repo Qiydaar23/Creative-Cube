@@ -2,12 +2,13 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import './profile.css'
+import './ashprofile.css'
 import { useEffect, useRef } from 'react'
 import Header from '../components/Header/Header';
+import Sidebar from '../components/Sidebar/Sidebar';
 
 
-export default function Profile() {
+export default function AshProfile() {
 
   const cloudinaryRef = useRef();
   const widgetRef = useRef();
@@ -37,24 +38,24 @@ export default function Profile() {
   return (
     <>
     <Header />
-    <div className='profile-page'>
-      <div className='holder'>
-      <div className='profile-container'  >
-        <img className='pic-icon' src='https://mail.google.com/mail/u/0?ui=2&ik=5c79c2748c&attid=0.1&permmsgid=msg-a:r-7329919252278184271&th=18854f72a62a1db2&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ_TaViINfeRo2xAzn2tvQqx-rmu5LwzDo6jxeg3RxU8XG-lSKTLQFNk4wCdVqxGDdSCL3es18Zzz6qwxK6jAL_pn8NsL8MwVTRQGKo7-_B8X--JLVX3Pv-fkgI&disp=emb&realattid=18854f7076ee4e019f71' alt='creative cube logo' />
+    
+    <div className='ashprofile-page'>
+      <div className='ashprofile-container'  >
+        <img className='ashpic-icon' src='https://res.cloudinary.com/dgr7iw6kd/image/upload/v1685285430/ej4a0nkemj0vayc54yss.jpg' alt='creative cube logo' />
       </div>
       <div>
-      <h1 className='profile-info' >Profile</h1>
-      <h2 className='profile-info' >Name: Qasir</h2>
-      <h2 className='profile-info' >Email: Qasir@creative.com</h2>
-      <h2 className='profile-info' >Phone: 917-xxx-xxxx</h2>
-      <h2 className='profile-info' >Other media outlet: IG, Facebook ... ask artist</h2>
-      <h2 className='profile-info' >Bio: I am a creative artist who loves to create art
+      <h1 className='ashprofile-info' >Profile</h1>
+      <h2 className='ashprofile-info' >Name: Ashley</h2>
+      <h2 className='ashprofile-info' >Email: Ashley@creative.com</h2>
+      <h2 className='ashprofile-info' >Phone: 917-xxx-xxxx</h2>
+      <h2 className='ashprofile-info' >Other media outlet: IG, Facebook ... ask artist</h2>
+      <h2 className='ashprofile-info' >Bio: I am a creative artist who loves to create art
         and share it with the world. I am a creative artist who loves to create art
       <h3> Enetr Room Code below to set private chat or lesson with artist</h3>  
       
       </h2>
       </div>
-      </div>
+
       <form onSubmit={handleRoomCodeChange} className='profile-form'>
         <div>
           <label htmlFor='name'>Enter Room code</label>

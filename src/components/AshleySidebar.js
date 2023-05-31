@@ -17,8 +17,9 @@ export default function AshleySidebar() {
     <div className={expended ? 'sidebar-container' : "sidebar-container sidebar-container-NX"}>
       <div className='sidebar-upper'>
         <div className='sidebar-heading'>
+          
           <div className='sidebar-brand'></div>
-            <img className='sidebar-heading-icon' src='https://res.cloudinary.com/dgr7iw6kd/image/upload/v1685285430/ej4a0nkemj0vayc54yss.jpg' alt='cube' />
+            <img className='sidebar-heading-icon' src='' alt='cube' />
             <h2>...............The Creative............</h2>
         </div>
         
@@ -61,7 +62,7 @@ export default function AshleySidebar() {
           <span className='sidebar-button-text'><CastForEducationIcon /><Link className='link-text' to = '/ashlesson'>lesson</Link></span>
 
           <span className='sidebar-button-text'><AccountBoxIcon /><Link className='link-text' to = '/ashprofile'>profile</Link></span>
-          <span className='sidebar-button-text'><ForumIcon /><Link className='link-text' to = '/chat'>chat</Link></span>
+          <span className='sidebar-button-text'><ForumIcon /><Link className='link-text' to = '/Ashchat'>chat</Link></span>
           <span className='sidebar-button-text'><AppsIcon /><Link to = '/ashgallery'>Gallery</Link></span>
       </div>
     </div>

@@ -60,10 +60,11 @@ export default function Ashchat(props) {
   };
 
   return (
-    <>
-    <div>
-        <Header />
-    </div>    
+<>
+    <Header />
+  <div className='split'>
+        <Chat />
+   <img  src="https://img.freepik.com/premium-vector/chat-sign-icon-hand-drawn-color-vector-illustration_755164-8684.jpg" alt="Ashley" className="center" />
     
     <div onSubmit={handleSubmit} className='chat-app'>
         <div className='header'>
@@ -89,8 +90,7 @@ export default function Ashchat(props) {
         </button>
       </form>
     </div>
-    <div>
-        <Chat />
+    
     </div>
     </>
     
